@@ -1,5 +1,7 @@
 # FakeDev -- API with fake data
 
+API -- for personal project
+
 ## File Structure
 - data/
 	- data.txt -- array with 1000 objects
