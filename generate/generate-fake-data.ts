@@ -16,11 +16,11 @@ for (let i = 0 ; i < 1000 ; i++) {
 	people.push(p);
 }
 
-await Deno.mkdir("../data").then(s => console.log("directory created")).catch(e => console.log("directory exists"))
-await Deno.create("../data/data.txt");
+await Deno.mkdir("data").then(s => console.log("directory created")).catch(e => console.log("directory exists"))
+await Deno.create("data/data.txt");
 
 try {
-	await Deno.writeTextFileSync("../data/data.txt", JSON.stringify(people));
+	await Deno.writeTextFileSync("data/data.txt", JSON.stringify(people));
 	console.log("Written");
 } catch (e) {
 	console.log(e.message);
