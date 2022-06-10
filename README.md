@@ -10,6 +10,7 @@ API -- for personal project
 			id: 	string,
 			name: 	string,
 			gender: number,
+			pictureID: string,
 		}`
 
 	- faces/
