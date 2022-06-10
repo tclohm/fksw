@@ -18,7 +18,7 @@ API -- for personal project
 	- generate-fake-data.ts
 	- generate-fake-faces.ts
 
-### Generate Fake data
+## Generate Fake data
 #### IMPORTANT: Please run commands at the root of project
 - Deno run --allow-write --allow-read generate-fake-data.ts
 - Deno run --allow-write --allow-net generate-fake-faces.ts
