@@ -18,6 +18,7 @@ API -- for personal project
 - generate/
 	- generate-fake-data.ts
 	- generate-fake-faces.ts
+- mod.ts
 
 ## Generate Fake data
 #### IMPORTANT: Please run commands at the root of project
