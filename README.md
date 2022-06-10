@@ -3,6 +3,7 @@
 ## File Structure
 - data/
 	- data.txt -- array with 1000 objects
+		
 		`object : { 
 			id: 	string,
 			name: 	string,
