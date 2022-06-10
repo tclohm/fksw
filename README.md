@@ -11,7 +11,7 @@
 		}`
 
 	- faces/
-		- face-#.ts ... 1000
+		- face-0.ts ... 1000
 - generate/
 	- generate-fake-data.ts
 	- generate-fake-faces.ts
