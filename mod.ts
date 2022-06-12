@@ -1,6 +1,7 @@
-import { Application } from "https://deno.land/x/oak/mod.ts";
+import { Application, Router, send } from "https://deno.land/x/oak/mod.ts";
 
 const app = new Application();
+const router = new Router();
 
 app.use(async (ctx, next) => {
   await next();
@@ -15,4 +16,14 @@ app.use(async (ctx, next) => {
   ctx.response.headers.set("X-Response-Time", `${ms}ms`);
 });
 
+router
+	.get("/", (ctx) => {
+		ctx.response.body = 'Welcome';
+})
+	.get("/:id", (ctx) => {
+		ctx.response.body = `hello ${ctx.params.id}, welcome this world`
+	})
+
+app.use(router.routes());
+app.use(router.allowedMethods());
 await app.listen({ port: 8000 });
