@@ -16,12 +16,17 @@ app.use(async (ctx, next) => {
   ctx.response.headers.set("X-Response-Time", `${ms}ms`);
 });
 
+app.use(async (ctx, next) => {
+  ctx.response.type = 'json'
+  await next()
+})
+
 router
 	.get("/", (ctx) => {
-		ctx.response.body = 'Welcome';
+		ctx.response.body = {"Welcome": "OK"};
 })
 	.get("/:id", (ctx) => {
-		ctx.response.body = `hello ${ctx.params.id}, welcome this world`
+		ctx.response.body = {"hello": `${ctx.params.id}`}
 	})
 
 app.use(router.routes());
