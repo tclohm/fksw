@@ -23,7 +23,8 @@ app.use(async (ctx, next) => {
 
 router
 	.get("/", (ctx) => {
-		ctx.response.body = {"Welcome": "OK"};
+
+		ctx.response.body = {"Welcome": `${Deno.cwd()}/data/faces/face-00.jpeg`};
 })
 	.get("/:id", (ctx) => {
 		ctx.response.body = {"hello": `${ctx.params.id}`}
@@ -38,6 +39,10 @@ app.addEventListener("listen", ({ hostname, port, secure }) => {
       hostname ?? "localhost"
     }:${port}`
   );
+});
+
+app.addEventListener("error", (event) => {
+  console.log(event.error);
 });
 
 await app.listen({ port: 8000 });
