@@ -5,6 +5,18 @@ const people = [];
 
 // gender -- 0: Other, 1: Male, 2: Female
 
+// Date generator
+function getRandomDate(from: Date, to: Date) {
+    const fromTime = from.getTime();
+    const toTime = to.getTime();
+    return new Date(fromTime + Math.random() * (toTime - fromTime));
+}
+
+const generateRandomDOB = (): string => {
+    const random = getRandomDate(new Date('1985-02-12T01:57:45.271Z'), new Date('2001-02-12T01:57:45.271Z'))
+    return random.toISOString();
+}
+
 for (let i = 0 ; i < 1000 ; i++) {
 	const d = Date.now() + i
 	const data = new TextEncoder().encode(d.toString());
@@ -13,13 +25,16 @@ for (let i = 0 ; i < 1000 ; i++) {
 		id: await v5.generate("8e884ace-bee4-11e4-8dfc-aa07a5b093db", data), 
 		name: faker.name.findName(), 
 		gender: Math.round(Math.random()) + Math.round(Math.random()),
-		pictureID: '',
+		distance_miles: Math.round(Math.random()) * 25,
+		birth_date: generateRandomDOB(),
+		picture_id: "",
+		bio: "",
 	};
 
 	if (i < 10) {
-		p.pictureID = `0${i}`
+		p.picture_id = `0${i}`
 	} else {
-		p.pictureID = `${i}`
+		p.picture_id = `${i}`
 	}
 	people.push(p);
 }

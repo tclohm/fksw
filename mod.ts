@@ -1,4 +1,5 @@
 import { Application, Router, send } from "https://deno.land/x/oak/mod.ts";
+import * as path from "https://deno.land/std@0.143.0/path/mod.ts";
 
 const app = new Application();
 const router = new Router();
@@ -22,9 +23,10 @@ app.use(async (ctx, next) => {
 })
 
 router
-	.get("/", (ctx) => {
-
-		ctx.response.body = {"Welcome": `${Deno.cwd()}/data/faces/face-00.jpeg`};
+	.get("/", async (ctx) => {
+    const start = 0
+    const filename = path.join(Deno.cwd(), "/data/faces/face-00.jpeg")
+		ctx.response.body = {"Welcome": filename};
 })
 	.get("/:id", (ctx) => {
 		ctx.response.body = {"hello": `${ctx.params.id}`}
