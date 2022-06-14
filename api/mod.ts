@@ -1,6 +1,7 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 import * as path from "https://deno.land/std@0.143.0/path/mod.ts";
 import { BufReader } from "https://deno.land/std@0.143.0/io/mod.ts";
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
 
 const app = new Application();
 const router = new Router();
@@ -35,6 +36,7 @@ router
      ctx.response.body = { params: ctx.params.id }
 })
 
+app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
