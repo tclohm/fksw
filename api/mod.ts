@@ -24,13 +24,13 @@ app.use(async (ctx, next) => {
 })
 
 router
-	.get("/", (ctx) => {
+	.get("/", async (ctx) => {
     //const filename = path.join(Deno.cwd(), "/data/faces/face-00.jpeg");
 		const filename = path.join(Deno.cwd(), "/data/data.json");
     const data = JSON.parse(await Deno.readTextFile(filename));
     ctx.response.body = { data }
 })
-	.get("/:id", async (ctx) => {
+	.get("/:id", (ctx) => {
      // ctx.params.id
      ctx.response.body = { params: ctx.params.id }
 })
