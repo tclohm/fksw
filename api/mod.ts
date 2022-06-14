@@ -31,9 +31,14 @@ router
     const data = JSON.parse(await Deno.readTextFile(filename));
     ctx.response.body = { data }
 })
-	.get("/:id", (ctx) => {
+	.get("/image/:id", async (ctx) => {
      // ctx.params.id
-     ctx.response.body = { params: ctx.params.id }
+     console.log(ctx.params.id, Deno.cwd())
+     const filename = path.join(Deno.cwd(), `data/faces/face-${ctx.params.id}.jpeg`);
+     console.log(filename)
+     const img = await Deno.readFile(filename);
+     ctx.response.type = 'image/jpeg';
+     ctx.response.body = img;
 })
 
 app.use(oakCors());
