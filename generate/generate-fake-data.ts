@@ -25,16 +25,16 @@ for (let i = 0 ; i < 1000 ; i++) {
 		id: await v5.generate("8e884ace-bee4-11e4-8dfc-aa07a5b093db", data), 
 		name: faker.name.findName(), 
 		gender: Math.round(Math.random()) + Math.round(Math.random()),
-		distance_miles: Math.round(Math.random()) * 25,
+		distance_miles: Math.round(Math.random() * 25),
 		birth_date: generateRandomDOB(),
 		picture_id: "",
 		bio: "",
 	};
 
 	if (i < 10) {
-		p.picture_id = `0${i}`
+		p.picture_id = `face-0${i}`
 	} else {
-		p.picture_id = `${i}`
+		p.picture_id = `face-${i}`
 	}
 	people.push(p);
 }

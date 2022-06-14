@@ -7,10 +7,13 @@ API -- for personal project
 	- data.txt -- array with 1000 objects
 		
 		`object : { 
-			id: 	string,
-			name: 	string,
-			gender: number,
-			pictureID: string,
+			id: 			string,
+			name: 			string,
+			distance_miles: number,
+			birth_date:		date,
+			gender: 		number,
+			picture_id: 	string,
+			bio:			string,
 		}`
 
 	- faces/
