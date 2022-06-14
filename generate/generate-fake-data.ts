@@ -40,10 +40,11 @@ for (let i = 0 ; i < 1000 ; i++) {
 }
 
 await Deno.mkdir("data").then(s => console.log("directory created")).catch(e => console.log("directory exists"))
-await Deno.create("data/data.txt");
+await Deno.create("data/data.json");
 
 try {
-	await Deno.writeTextFileSync("data/data.txt", JSON.stringify(people));
+	await Deno.writeTextFileSync("data/data.json", JSON.stringify(people));
+	console.log(people)
 	console.log("Written");
 } catch (e) {
 	console.log(e.message);
