@@ -12,6 +12,16 @@ function App() {
     return new Date(Date.now()).getFullYear() - new Date(string).getFullYear()
   }
 
+  const update = (number) => {
+    const n = Number(number)
+    if (n < 10) {
+      setImageNumber("0" + String(n + 1))
+    } else {
+      setImageNumber(String(n + 1))
+    }
+    setNumber(number + 1)
+  }
+
   const getGender = (number) => {
     switch (number) {
       case 0:
@@ -45,7 +55,7 @@ function App() {
 
   useEffect(() => {
     getImage(imageNumber)
-  }, [number])
+  }, [number, imageNumber])
 
   return (
     <div className="App">
@@ -64,8 +74,12 @@ function App() {
         </div>
        }
        <div className="relative -bottom-12">
-       <button className="border rounded h-12 w-24 m-2 text-xl font-bold bg-green-400 hover:bg-green-600">yes</button>
-       <button className="border rounded h-12 w-24 m-2 text-xl font-bold bg-red-400 hover:bg-red-600">no</button>
+       <button 
+       onClick={() => update(number)} 
+       className="border rounded h-12 w-24 m-2 text-xl font-bold bg-green-400 hover:bg-green-600">yes</button>
+       <button 
+       onClick={() => update(number)}
+       className="border rounded h-12 w-24 m-2 text-xl font-bold bg-red-400 hover:bg-red-600">no</button>
        </div>
       </header>
     </div>
