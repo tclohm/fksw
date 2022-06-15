@@ -60,6 +60,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+       <div className="absolute right-4 top-4 flex items-center">
+         <p className="font-bold text-2xl mr-4">{number}</p>
+         <img className="h-8 w-8 rounded" src="coin.gif" />
+       </div>
        { data.length === 0 ?
           <p> :( </p>
         :
@@ -82,6 +86,15 @@ function App() {
        className="border rounded h-12 w-24 m-2 text-xl font-bold bg-red-400 hover:bg-red-600">no</button>
        </div>
       </header>
+      <span class="absolute bottom-10 right-3 flex h-3 w-3 z-10">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+      </span>
+      <button className="absolute bottom-4 right-4 text-red-400 rounded border h-8 w-8 flex justify-center items-center hover:bg-gray-400">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+         <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+        </svg>
+      </button>
     </div>
   );
 }
