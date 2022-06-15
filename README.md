@@ -1,27 +1,31 @@
-# FakeDev -- API with fake data
+# FakeDev -- Web / API
 
-API -- for personal project
+API uses Deno / oak -- typescript
+Web uses React -- javascript
 
 ## File Structure
-- data/
-	- data.txt -- array with 1000 objects
+- api/
+	- data/
+		- data.json -- array with 1000 objects
 		
-		`object : { 
-			id: 			string,
-			name: 			string,
-			distance_miles: number,
-			birth_date:		date,
-			gender: 		number,
-			picture_id: 	string,
-			bio:			string,
-		}`
+			`object : { 
+				id: 			string,
+				name: 			string,
+				distance_miles: number,
+				birth_date:		date,
+				gender: 		number,
+				picture_id: 	string,
+				bio:			string,
+			}`
 
-	- faces/
-		- face-0.ts ... 1000
-- generate/
-	- generate-fake-data.ts
-	- generate-fake-faces.ts
-- mod.ts
+		- faces/
+			- face-0.ts ... 1000
+		- generate/
+			- generate-fake-data.ts
+			- generate-fake-faces.ts
+	- mod.ts
+- web/
+	- src/
 
 ## Generate Fake data
 #### IMPORTANT: Please run commands at the root of project
